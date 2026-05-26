@@ -26,6 +26,14 @@ import {
   loadShiftLedgerLiteState,
   saveShiftLedgerLiteState,
 } from './features/shiftledger-lite/shiftledger-lite.repo';
+import { act_assign_record as assignOperatorRecord } from './features/surf-operator-assignment/act_assign_record';
+import { act_filter_insights as filterAssignmentInsights } from './features/surf-operator-assignment/act_filter_insights';
+import { act_select_record as selectAssignmentRecord } from './features/surf-operator-assignment/act_select_record';
+import { act_cancel_edit as cancelOperatorEdit } from './features/surf-operator-editor/act_cancel_edit';
+import { act_save_record as saveOperatorRecord } from './features/surf-operator-editor/act_save_record';
+import { act_create_record as createOperatorRecord } from './features/surf-operator-operations/act_create_record';
+import { act_retry_load as retryOperatorLoad } from './features/surf-operator-operations/act_retry_load';
+import { act_select_record as selectOperatorRecord } from './features/surf-operator-operations/act_select_record';
 import { publishShiftLedgerLiteBridge } from './test/bridge';
 
 const initialState = createShiftLedgerLiteSnapshot(
@@ -261,17 +269,26 @@ export default function App() {
 const actionDispatch: Record<string, ShiftLedgerLiteAction> = {
   'sync-1': { type: 'storageStatus', status: 'synced' },
   'sync-2': { type: 'storageStatus', status: 'synced' },
-  'create-record-1': { type: 'openEditor' },
-  'create-record-2': { type: 'openEditor' },
-  'create-record-3': { type: 'openEditor' },
-  'edit-7': { type: 'openEditor', selectedRecordId: 'OPS-1042' },
-  'edit-8': { type: 'openEditor', selectedRecordId: 'OPS-1043' },
-  'edit-9': { type: 'openEditor', selectedRecordId: 'OPS-1044' },
-  'retry-10': { type: 'storageStatus', status: 'saved' },
-  'edit-11': { type: 'openEditor', selectedRecordId: 'OPS-1045' },
+  'create-record-1': createOperatorRecord(),
+  'create-record-2': createOperatorRecord(),
+  'create-record-3': createOperatorRecord(),
+  'bulk-assign-5': assignOperatorRecord(),
+  'more-vert-6': selectAssignmentRecord('OPS-1042'),
+  'more-vert-7': selectAssignmentRecord('OPS-1043'),
+  'more-vert-8': selectAssignmentRecord('OPS-1044'),
+  'more-vert-9': selectAssignmentRecord('OPS-1045'),
+  'execute-assignment-10': assignOperatorRecord('OPS-1042'),
+  'history-11': filterAssignmentInsights('assignment-history'),
+  'filter-5': { type: 'panel', panel: 'operations-filter' },
+  'sort-6': { type: 'panel', panel: 'operations-sort' },
+  'edit-7': selectOperatorRecord('OPS-1042'),
+  'edit-8': selectOperatorRecord('OPS-1043'),
+  'edit-9': selectOperatorRecord('OPS-1044'),
+  'retry-10': retryOperatorLoad(),
+  'edit-11': selectOperatorRecord('OPS-1045'),
   'go-back-1': { type: 'navigate', screen: 'operations' },
-  'cancel-2': { type: 'navigate', screen: 'operations' },
-  'save-record-3': { type: 'storageStatus', status: 'saved' },
+  'cancel-2': cancelOperatorEdit(),
+  'save-record-3': saveOperatorRecord(),
   'reset-to-defaults-7': { type: 'resetPreferences' },
   'reset-controls-8': { type: 'resetPreferences' },
   'save-changes-9': { type: 'storageStatus', status: 'saved' },
