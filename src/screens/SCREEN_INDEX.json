@@ -1,0 +1,702 @@
+[
+  {
+    "screenId": "9e9cef32fbe546fb9ad0bdcd81c0cd61",
+    "title": "Operator Editor - ShiftLedger Lite",
+    "componentName": "OperatorEditorShiftledgerLite",
+    "file": "src/screens/OperatorEditorShiftledgerLite.tsx",
+    "buttons": 3,
+    "inputs": 2,
+    "links": 0,
+    "actions": [
+      {
+        "id": "go-back-1",
+        "kind": "button",
+        "label": "Go Back",
+        "index": 0
+      },
+      {
+        "id": "cancel-2",
+        "kind": "button",
+        "label": "Cancel",
+        "index": 1
+      },
+      {
+        "id": "save-record-3",
+        "kind": "button",
+        "label": "Save Record",
+        "index": 2
+      }
+    ]
+  },
+  {
+    "screenId": "83ef15c7a1b14e55a0e8a6942b5af840",
+    "title": "Operator Assignment - ShiftLedger Lite",
+    "componentName": "OperatorAssignmentShiftledgerLite",
+    "file": "src/screens/OperatorAssignmentShiftledgerLite.tsx",
+    "buttons": 11,
+    "inputs": 1,
+    "links": 8,
+    "actions": [
+      {
+        "id": "create-record-1",
+        "kind": "button",
+        "label": "Create Record",
+        "index": 0
+      },
+      {
+        "id": "sync-2",
+        "kind": "button",
+        "label": "Sync",
+        "index": 1
+      },
+      {
+        "id": "notifications-3",
+        "kind": "button",
+        "label": "Notifications",
+        "index": 2
+      },
+      {
+        "id": "account-circle-4",
+        "kind": "button",
+        "label": "Account Circle",
+        "index": 3
+      },
+      {
+        "id": "bulk-assign-5",
+        "kind": "button",
+        "label": "Bulk Assign",
+        "index": 4
+      },
+      {
+        "id": "more-vert-6",
+        "kind": "button",
+        "label": "More Vert",
+        "index": 5
+      },
+      {
+        "id": "more-vert-7",
+        "kind": "button",
+        "label": "More Vert",
+        "index": 6
+      },
+      {
+        "id": "more-vert-8",
+        "kind": "button",
+        "label": "More Vert",
+        "index": 7
+      },
+      {
+        "id": "more-vert-9",
+        "kind": "button",
+        "label": "More Vert",
+        "index": 8
+      },
+      {
+        "id": "execute-assignment-10",
+        "kind": "button",
+        "label": "Execute Assignment",
+        "index": 9
+      },
+      {
+        "id": "history-11",
+        "kind": "button",
+        "label": "History",
+        "index": 10
+      },
+      {
+        "id": "operations-1",
+        "kind": "link",
+        "label": "Operations",
+        "href": "#",
+        "index": 0
+      },
+      {
+        "id": "status-board-2",
+        "kind": "link",
+        "label": "Status Board",
+        "href": "#",
+        "index": 1
+      },
+      {
+        "id": "assignments-3",
+        "kind": "link",
+        "label": "Assignments",
+        "href": "#",
+        "index": 2
+      },
+      {
+        "id": "insights-4",
+        "kind": "link",
+        "label": "Insights",
+        "href": "#",
+        "index": 3
+      },
+      {
+        "id": "settings-5",
+        "kind": "link",
+        "label": "Settings",
+        "href": "#",
+        "index": 4
+      },
+      {
+        "id": "support-6",
+        "kind": "link",
+        "label": "Support",
+        "href": "#",
+        "index": 5
+      },
+      {
+        "id": "system-status-7",
+        "kind": "link",
+        "label": "System Status",
+        "href": "#",
+        "index": 6
+      },
+      {
+        "id": "documentation-8",
+        "kind": "link",
+        "label": "Documentation",
+        "href": "#",
+        "index": 7
+      }
+    ]
+  },
+  {
+    "screenId": "b1ea7ebfabb5433180777891609722b6",
+    "title": "Operator Operations - ShiftLedger Lite",
+    "componentName": "OperatorOperationsShiftledgerLite",
+    "file": "src/screens/OperatorOperationsShiftledgerLite.tsx",
+    "buttons": 14,
+    "inputs": 1,
+    "links": 8,
+    "actions": [
+      {
+        "id": "sync-1",
+        "kind": "button",
+        "label": "Sync",
+        "index": 0
+      },
+      {
+        "id": "create-record-2",
+        "kind": "button",
+        "label": "Create Record",
+        "index": 1
+      },
+      {
+        "id": "notifications-3",
+        "kind": "button",
+        "label": "Notifications",
+        "index": 2
+      },
+      {
+        "id": "account-circle-4",
+        "kind": "button",
+        "label": "Account Circle",
+        "index": 3
+      },
+      {
+        "id": "filter-5",
+        "kind": "button",
+        "label": "Filter",
+        "index": 4
+      },
+      {
+        "id": "sort-6",
+        "kind": "button",
+        "label": "Sort",
+        "index": 5
+      },
+      {
+        "id": "edit-7",
+        "kind": "button",
+        "label": "Edit",
+        "index": 6
+      },
+      {
+        "id": "edit-8",
+        "kind": "button",
+        "label": "Edit",
+        "index": 7
+      },
+      {
+        "id": "edit-9",
+        "kind": "button",
+        "label": "Edit",
+        "index": 8
+      },
+      {
+        "id": "retry-10",
+        "kind": "button",
+        "label": "Retry",
+        "index": 9
+      },
+      {
+        "id": "edit-11",
+        "kind": "button",
+        "label": "Edit",
+        "index": 10
+      },
+      {
+        "id": "close-12",
+        "kind": "button",
+        "label": "Close",
+        "index": 11
+      },
+      {
+        "id": "message-13",
+        "kind": "button",
+        "label": "Message",
+        "index": 12
+      },
+      {
+        "id": "assign-task-14",
+        "kind": "button",
+        "label": "Assign Task",
+        "index": 13
+      },
+      {
+        "id": "operations-1",
+        "kind": "link",
+        "label": "Operations",
+        "href": "#",
+        "index": 0
+      },
+      {
+        "id": "status-board-2",
+        "kind": "link",
+        "label": "Status Board",
+        "href": "#",
+        "index": 1
+      },
+      {
+        "id": "assignments-3",
+        "kind": "link",
+        "label": "Assignments",
+        "href": "#",
+        "index": 2
+      },
+      {
+        "id": "insights-4",
+        "kind": "link",
+        "label": "Insights",
+        "href": "#",
+        "index": 3
+      },
+      {
+        "id": "settings-5",
+        "kind": "link",
+        "label": "Settings",
+        "href": "#",
+        "index": 4
+      },
+      {
+        "id": "support-6",
+        "kind": "link",
+        "label": "Support",
+        "href": "#",
+        "index": 5
+      },
+      {
+        "id": "system-status-7",
+        "kind": "link",
+        "label": "System Status",
+        "href": "#",
+        "index": 6
+      },
+      {
+        "id": "documentation-8",
+        "kind": "link",
+        "label": "Documentation",
+        "href": "#",
+        "index": 7
+      }
+    ]
+  },
+  {
+    "screenId": "57219ab8bdfa49e4860194ea60266cfd",
+    "title": "Status Board - ShiftLedger Lite",
+    "componentName": "StatusBoardShiftledgerLite",
+    "file": "src/screens/StatusBoardShiftledgerLite.tsx",
+    "buttons": 13,
+    "inputs": 1,
+    "links": 8,
+    "actions": [
+      {
+        "id": "sync-1",
+        "kind": "button",
+        "label": "Sync",
+        "index": 0
+      },
+      {
+        "id": "create-record-2",
+        "kind": "button",
+        "label": "Create Record",
+        "index": 1
+      },
+      {
+        "id": "notifications-3",
+        "kind": "button",
+        "label": "Notifications",
+        "index": 2
+      },
+      {
+        "id": "menu-4",
+        "kind": "button",
+        "label": "Menu",
+        "index": 3
+      },
+      {
+        "id": "filter-list-5",
+        "kind": "button",
+        "label": "Filter List",
+        "index": 4
+      },
+      {
+        "id": "view-week-6",
+        "kind": "button",
+        "label": "View Week",
+        "index": 5
+      },
+      {
+        "id": "more-horiz-7",
+        "kind": "button",
+        "label": "More Horiz",
+        "index": 6
+      },
+      {
+        "id": "more-horiz-8",
+        "kind": "button",
+        "label": "More Horiz",
+        "index": 7
+      },
+      {
+        "id": "edit-9",
+        "kind": "button",
+        "label": "Edit",
+        "index": 8
+      },
+      {
+        "id": "more-horiz-10",
+        "kind": "button",
+        "label": "More Horiz",
+        "index": 9
+      },
+      {
+        "id": "resolve-11",
+        "kind": "button",
+        "label": "RESOLVE",
+        "index": 10
+      },
+      {
+        "id": "more-horiz-12",
+        "kind": "button",
+        "label": "More Horiz",
+        "index": 11
+      },
+      {
+        "id": "sign-off-13",
+        "kind": "button",
+        "label": "SIGN OFF",
+        "index": 12
+      },
+      {
+        "id": "operations-1",
+        "kind": "link",
+        "label": "Operations",
+        "href": "#",
+        "index": 0
+      },
+      {
+        "id": "status-board-2",
+        "kind": "link",
+        "label": "Status Board",
+        "href": "#",
+        "index": 1
+      },
+      {
+        "id": "assignments-3",
+        "kind": "link",
+        "label": "Assignments",
+        "href": "#",
+        "index": 2
+      },
+      {
+        "id": "insights-4",
+        "kind": "link",
+        "label": "Insights",
+        "href": "#",
+        "index": 3
+      },
+      {
+        "id": "settings-5",
+        "kind": "link",
+        "label": "Settings",
+        "href": "#",
+        "index": 4
+      },
+      {
+        "id": "support-6",
+        "kind": "link",
+        "label": "Support",
+        "href": "#",
+        "index": 5
+      },
+      {
+        "id": "system-status-7",
+        "kind": "link",
+        "label": "System Status",
+        "href": "#",
+        "index": 6
+      },
+      {
+        "id": "documentation-8",
+        "kind": "link",
+        "label": "Documentation",
+        "href": "#",
+        "index": 7
+      }
+    ]
+  },
+  {
+    "screenId": "7902aeecda09476997a7ef1ebb837333",
+    "title": "Insights - ShiftLedger Lite",
+    "componentName": "InsightsShiftledgerLite",
+    "file": "src/screens/InsightsShiftledgerLite.tsx",
+    "buttons": 9,
+    "inputs": 1,
+    "links": 8,
+    "actions": [
+      {
+        "id": "menu-1",
+        "kind": "button",
+        "label": "Menu",
+        "index": 0
+      },
+      {
+        "id": "sync-2",
+        "kind": "button",
+        "label": "Sync",
+        "index": 1
+      },
+      {
+        "id": "create-record-3",
+        "kind": "button",
+        "label": "Create Record",
+        "index": 2
+      },
+      {
+        "id": "notifications-4",
+        "kind": "button",
+        "label": "Notifications",
+        "index": 3
+      },
+      {
+        "id": "account-circle-5",
+        "kind": "button",
+        "label": "Account Circle",
+        "index": 4
+      },
+      {
+        "id": "filter-6",
+        "kind": "button",
+        "label": "Filter",
+        "index": 5
+      },
+      {
+        "id": "export-7",
+        "kind": "button",
+        "label": "Export",
+        "index": 6
+      },
+      {
+        "id": "view-tasks-8",
+        "kind": "button",
+        "label": "View Tasks",
+        "index": 7
+      },
+      {
+        "id": "more-vert-9",
+        "kind": "button",
+        "label": "More Vert",
+        "index": 8
+      },
+      {
+        "id": "operations-1",
+        "kind": "link",
+        "label": "Operations",
+        "href": "#",
+        "index": 0
+      },
+      {
+        "id": "status-board-2",
+        "kind": "link",
+        "label": "Status Board",
+        "href": "#",
+        "index": 1
+      },
+      {
+        "id": "assignments-3",
+        "kind": "link",
+        "label": "Assignments",
+        "href": "#",
+        "index": 2
+      },
+      {
+        "id": "insights-4",
+        "kind": "link",
+        "label": "Insights",
+        "href": "#",
+        "index": 3
+      },
+      {
+        "id": "settings-5",
+        "kind": "link",
+        "label": "Settings",
+        "href": "#",
+        "index": 4
+      },
+      {
+        "id": "support-6",
+        "kind": "link",
+        "label": "Support",
+        "href": "#",
+        "index": 5
+      },
+      {
+        "id": "system-status-7",
+        "kind": "link",
+        "label": "System Status",
+        "href": "#",
+        "index": 6
+      },
+      {
+        "id": "documentation-8",
+        "kind": "link",
+        "label": "Documentation",
+        "href": "#",
+        "index": 7
+      }
+    ]
+  },
+  {
+    "screenId": "69ec0ddc999a4bf4a1019765b5cfa0ae",
+    "title": "Settings and Preferences - ShiftLedger Lite",
+    "componentName": "SettingsAndPreferencesShiftledgerLite",
+    "file": "src/screens/SettingsAndPreferencesShiftledgerLite.tsx",
+    "buttons": 9,
+    "inputs": 8,
+    "links": 8,
+    "actions": [
+      {
+        "id": "sync-1",
+        "kind": "button",
+        "label": "Sync",
+        "index": 0
+      },
+      {
+        "id": "create-record-2",
+        "kind": "button",
+        "label": "Create Record",
+        "index": 1
+      },
+      {
+        "id": "notifications-3",
+        "kind": "button",
+        "label": "Notifications",
+        "index": 2
+      },
+      {
+        "id": "account-circle-4",
+        "kind": "button",
+        "label": "Account Circle",
+        "index": 3
+      },
+      {
+        "id": "edit-5",
+        "kind": "button",
+        "label": "Edit",
+        "index": 4
+      },
+      {
+        "id": "edit-6",
+        "kind": "button",
+        "label": "Edit",
+        "index": 5
+      },
+      {
+        "id": "reset-to-defaults-7",
+        "kind": "button",
+        "label": "Reset to Defaults",
+        "index": 6
+      },
+      {
+        "id": "reset-controls-8",
+        "kind": "button",
+        "label": "Reset Controls",
+        "index": 7
+      },
+      {
+        "id": "save-changes-9",
+        "kind": "button",
+        "label": "Save Changes",
+        "index": 8
+      },
+      {
+        "id": "operations-1",
+        "kind": "link",
+        "label": "Operations",
+        "href": "#",
+        "index": 0
+      },
+      {
+        "id": "status-board-2",
+        "kind": "link",
+        "label": "Status Board",
+        "href": "#",
+        "index": 1
+      },
+      {
+        "id": "assignments-3",
+        "kind": "link",
+        "label": "Assignments",
+        "href": "#",
+        "index": 2
+      },
+      {
+        "id": "insights-4",
+        "kind": "link",
+        "label": "Insights",
+        "href": "#",
+        "index": 3
+      },
+      {
+        "id": "settings-5",
+        "kind": "link",
+        "label": "Settings",
+        "href": "#",
+        "index": 4
+      },
+      {
+        "id": "support-6",
+        "kind": "link",
+        "label": "Support",
+        "href": "#",
+        "index": 5
+      },
+      {
+        "id": "system-status-7",
+        "kind": "link",
+        "label": "System Status",
+        "href": "#",
+        "index": 6
+      },
+      {
+        "id": "documentation-8",
+        "kind": "link",
+        "label": "Documentation",
+        "href": "#",
+        "index": 7
+      }
+    ]
+  }
+]
