@@ -36,6 +36,14 @@ export function saveShiftLedgerLiteState(state: ShiftLedgerLiteState) {
   window.localStorage.setItem(storageKey, JSON.stringify(persisted));
 }
 
+export function clearShiftLedgerLiteState() {
+  if (!canUseStorage()) {
+    return;
+  }
+
+  window.localStorage.removeItem(storageKey);
+}
+
 function canUseStorage() {
   return typeof window !== 'undefined' && Boolean(window.localStorage);
 }

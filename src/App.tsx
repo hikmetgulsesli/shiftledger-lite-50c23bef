@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useReducer } from 'react';
+import { useEffect, useMemo, useReducer, type Dispatch } from 'react';
 import {
   InsightsShiftledgerLite,
   OperatorAssignmentShiftledgerLite,
@@ -19,8 +19,10 @@ import {
   reduceShiftLedgerLiteState,
   type ShiftLedgerLiteAction,
   type ShiftLedgerLiteScreen,
+  type ShiftLedgerLiteState,
 } from './features/shiftledger-lite/shiftledger-lite.store';
 import {
+  clearShiftLedgerLiteState,
   loadShiftLedgerLiteState,
   saveShiftLedgerLiteState,
 } from './features/shiftledger-lite/shiftledger-lite.repo';
@@ -43,7 +45,22 @@ export default function App() {
   const [state, dispatch] = useReducer(reduceShiftLedgerLiteState, initialState);
 
   useEffect(() => {
-    saveShiftLedgerLiteState(state);
+    try {
+      if (state.storageStatus === 'cleared') {
+        clearShiftLedgerLiteState();
+      } else if (state.storageStatus !== 'recovering') {
+        saveShiftLedgerLiteState(state);
+      }
+    } catch (error) {
+      dispatch({
+        type: 'storageError',
+        message:
+          error instanceof Error
+            ? error.message
+            : 'Unable to persist ShiftLedger Lite data.',
+      });
+    }
+
     publishShiftLedgerLiteBridge(state);
   }, [state]);
 
@@ -216,8 +233,9 @@ export default function App() {
   return (
     <div
       data-setfarm-root="shiftledger-lite"
-      className="flex min-h-screen bg-background text-on-surface"
+      className="flex min-h-screen flex-col bg-background text-on-surface"
     >
+      <PersistenceStatus state={state} dispatch={dispatch} />
       {state.activeScreen === 'operations' && (
         <OperatorOperationsShiftledgerLite actions={operationsActions} />
       )}
@@ -249,6 +267,7 @@ const actionDispatch: Record<string, ShiftLedgerLiteAction> = {
   'edit-7': { type: 'openEditor', selectedRecordId: 'OPS-1042' },
   'edit-8': { type: 'openEditor', selectedRecordId: 'OPS-1043' },
   'edit-9': { type: 'openEditor', selectedRecordId: 'OPS-1044' },
+  'retry-10': { type: 'storageStatus', status: 'saved' },
   'edit-11': { type: 'openEditor', selectedRecordId: 'OPS-1045' },
   'go-back-1': { type: 'navigate', screen: 'operations' },
   'cancel-2': { type: 'navigate', screen: 'operations' },
@@ -257,6 +276,89 @@ const actionDispatch: Record<string, ShiftLedgerLiteAction> = {
   'reset-controls-8': { type: 'resetPreferences' },
   'save-changes-9': { type: 'storageStatus', status: 'saved' },
 };
+
+function PersistenceStatus({
+  state,
+  dispatch,
+}: {
+  state: ShiftLedgerLiteState;
+  dispatch: Dispatch<ShiftLedgerLiteAction>;
+}) {
+  const copy = getPersistenceCopy(state.storageStatus, state.lastError);
+
+  return (
+    <section
+      aria-live="polite"
+      data-testid="persistence-feedback"
+      className="border-b border-outline/20 bg-surface px-4 py-3 text-sm text-on-surface"
+    >
+      <div className="mx-auto flex w-full max-w-7xl flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+        <p>
+          <span className="font-semibold">{copy.title}</span>
+          <span className="ml-2 text-on-surface-variant">{copy.detail}</span>
+        </p>
+        <div className="flex gap-2">
+          {state.storageStatus === 'recovering' && (
+            <button
+              type="button"
+              data-action-id="retry-persistence"
+              onClick={() =>
+                dispatch({ type: 'storageStatus', status: 'saved' })
+              }
+              className="rounded-md border border-primary px-3 py-1 font-medium text-primary"
+            >
+              Retry
+            </button>
+          )}
+          <button
+            type="button"
+            data-action-id="clear-data"
+            onClick={() => dispatch({ type: 'clearPersistence' })}
+            className="rounded-md border border-outline/40 px-3 py-1 font-medium text-on-surface"
+          >
+            Clear data
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function getPersistenceCopy(
+  status: ShiftLedgerLiteState['storageStatus'],
+  lastError: string | null,
+) {
+  switch (status) {
+    case 'synced':
+      return {
+        title: 'Local storage synced.',
+        detail: 'The latest shell state was saved on this device.',
+      };
+    case 'saved':
+      return {
+        title: 'Local copy saved.',
+        detail: 'ShiftLedger Lite will reopen with these settings.',
+      };
+    case 'recovering':
+      return {
+        title: 'Local storage needs attention.',
+        detail:
+          lastError ??
+          'Saved data could not be restored. Retry or clear the local copy.',
+      };
+    case 'cleared':
+      return {
+        title: 'Local data cleared.',
+        detail: 'The app is using the default ShiftLedger Lite workspace.',
+      };
+    case 'ready':
+    default:
+      return {
+        title: 'Local storage ready.',
+        detail: 'ShiftLedger Lite can save this workspace on this device.',
+      };
+  }
+}
 
 function mapActions<ActionId extends string>(
   ids: ActionId[],

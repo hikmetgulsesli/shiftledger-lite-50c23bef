@@ -10,7 +10,8 @@ export type ShiftLedgerLiteStorageStatus =
   | 'ready'
   | 'synced'
   | 'saved'
-  | 'recovering';
+  | 'recovering'
+  | 'cleared';
 
 export interface ShiftLedgerLiteRecord {
   id: string;
@@ -44,6 +45,7 @@ export type ShiftLedgerLiteAction =
   | { type: 'panel'; panel: string }
   | { type: 'storageStatus'; status: ShiftLedgerLiteStorageStatus }
   | { type: 'storageError'; message: string }
+  | { type: 'clearPersistence' }
   | { type: 'resetPreferences' };
 
 export type ShiftLedgerLiteLoader = () => Partial<ShiftLedgerLiteState> | null;
@@ -122,6 +124,12 @@ export function reduceShiftLedgerLiteState(
         ...state,
         storageStatus: 'recovering',
         lastError: action.message,
+      });
+    case 'clearPersistence':
+      return normalizeState({
+        ...state,
+        storageStatus: 'cleared',
+        lastError: null,
       });
     case 'resetPreferences':
       return normalizeState({
