@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Operator Assignment - ShiftLedger Lite</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#45464d",
+                        "secondary-container": "#316bf3",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#dbe1ff",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "primary-container": "#131b2e",
+                        "on-primary-fixed": "#131b2e",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "inverse-surface": "#303032",
+                        "surface-bright": "#fcf8fa",
+                        "on-error": "#ffffff",
+                        "surface-container": "#f0edef",
+                        "primary": "#000000",
+                        "on-tertiary-fixed": "#271901",
+                        "on-secondary-fixed-variant": "#003ea8",
+                        "primary-fixed-dim": "#bec6e0",
+                        "inverse-primary": "#bec6e0",
+                        "surface-tint": "#565e74",
+                        "on-surface": "#1b1b1d",
+                        "background": "#fcf8fa",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "surface-container-highest": "#e4e2e4",
+                        "inverse-on-surface": "#f3f0f2",
+                        "surface-container-low": "#f6f3f5",
+                        "on-background": "#1b1b1d",
+                        "primary-fixed": "#dae2fd",
+                        "on-secondary-container": "#fefcff",
+                        "on-primary-container": "#7c839b",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#98805d",
+                        "outline-variant": "#c6c6cd",
+                        "surface-variant": "#e4e2e4",
+                        "outline": "#76777d",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#00174b",
+                        "surface": "#fcf8fa",
+                        "tertiary": "#000000",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#0051d5",
+                        "surface-dim": "#dcd9db",
+                        "tertiary-container": "#271901",
+                        "tertiary-fixed": "#fcdeb5",
+                        "surface-container-high": "#eae7e9",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#574425"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "row-height-standard": "44px",
+                        "stack-md": "0.75rem",
+                        "unit": "4px",
+                        "container-padding": "1.5rem",
+                        "row-height-compact": "32px",
+                        "stack-sm": "0.25rem",
+                        "gutter": "1rem"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "display": ["Inter"],
+                        "body-base": ["Inter"],
+                        "display-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "data-mono": ["JetBrains Mono"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "display": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-base": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "display-mobile": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-md": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "data-mono": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "label-caps": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #F8FAFC; }
+        .data-table-row:hover { background-color: #F1F5F9; }
+        .glass-panel { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(8px); border: 1px solid #E2E8F0; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-base text-body-base overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-surface-container-lowest dark:bg-surface-container-low text-primary dark:text-inverse-primary font-label-caps text-label-caps docked full-width top-0 h-12 border-b border-outline-variant dark:border-outline flat no shadows flex justify-between items-center ml-0 md:ml-[240px] px-container-padding fixed w-full md:w-[calc(100%-240px)] z-50">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-black text-primary dark:text-on-primary-fixed md:hidden">ShiftLedger Lite</span>
+<div class="hidden md:flex items-center gap-2 bg-surface-container rounded px-3 py-1.5 h-8">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-sm font-body-sm text-on-surface p-0 w-64 placeholder-on-surface-variant" placeholder="Search operators or assignments..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary hover:bg-surface-tint rounded px-4 h-8 flex items-center justify-center transition-colors font-label-caps text-label-caps uppercase tracking-wider">
+                Create Record
+            </button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="sync">sync</span>
+<span class="hidden sm:inline">Sync</span>
+</button>
+<div class="flex items-center gap-2 border-l border-outline-variant pl-4 ml-2">
+<button class="text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex bg-surface dark:bg-inverse-surface text-secondary dark:text-secondary-fixed font-body-base text-body-base w-[240px] h-screen fixed left-0 top-0 border-r border-outline-variant dark:border-outline flat no shadows flex-col py-4 z-40">
+<div class="px-6 mb-8 mt-2">
+<div class="font-headline-md text-headline-md font-bold text-on-surface dark:text-on-background">ShiftLedger Lite</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-1">Operational Handoff</div>
+</div>
+<div class="flex-1 flex flex-col gap-1 px-3">
+<a class="flex items-center gap-3 px-3 py-2 rounded text-on-surface-variant dark:text-on-surface-variant font-medium hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+                Operations
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded text-on-surface-variant dark:text-on-surface-variant font-medium hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Status Board
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded text-secondary dark:text-secondary-fixed-dim font-bold border-r-2 border-secondary bg-surface-container-low" href="#">
+<span class="material-symbols-outlined" data-icon="assignment_ind">assignment_ind</span>
+                Assignments
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded text-on-surface-variant dark:text-on-surface-variant font-medium hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+                Insights
+            </a>
+</div>
+<div class="mt-auto px-3 flex flex-col gap-1 border-t border-outline-variant pt-4">
+<a class="flex items-center gap-3 px-3 py-2 rounded text-on-surface-variant dark:text-on-surface-variant font-medium hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded text-on-surface-variant dark:text-on-surface-variant font-medium hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+                Support
+            </a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="md:ml-[240px] pt-12 pb-8 min-h-screen flex flex-col">
+<div class="p-container-padding flex-1 flex flex-col gap-gutter max-w-[1440px] mx-auto w-full">
+<!-- Page Header & Metrics Bar -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-4 gap-4">
+<div>
+<h1 class="font-display text-display text-on-surface mb-1">Operator Assignment</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Active roster and current workload distribution.</p>
+</div>
+<div class="flex gap-4 w-full md:w-auto">
+<!-- Metric Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-3 min-w-[120px] flex-1 md:flex-none">
+<div class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Total Operators</div>
+<div class="font-display text-display text-on-surface">24</div>
+</div>
+<!-- Metric Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-3 min-w-[120px] flex-1 md:flex-none relative overflow-hidden">
+<div class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Unassigned</div>
+<div class="font-display text-display text-error">3</div>
+<div class="absolute top-0 right-0 w-1 h-full bg-error"></div>
+</div>
+<!-- Metric Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-3 min-w-[120px] flex-1 md:flex-none">
+<div class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Overloaded</div>
+<div class="font-display text-display text-on-surface">1</div>
+</div>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 flex-1">
+<!-- Main Assignment Grid (Spans 2 columns on lg) -->
+<div class="lg:col-span-2 flex flex-col gap-4">
+<!-- Action Bar -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded h-12 flex items-center justify-between px-4">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]" data-icon="filter_list">filter_list</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Filter</span>
+</div>
+<div class="h-4 w-px bg-outline-variant"></div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error block"></span>
+<span class="font-body-sm text-body-sm text-on-surface">Needs Attention</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="font-label-caps text-label-caps text-secondary hover:text-surface-tint uppercase transition-colors">Bulk Assign</button>
+</div>
+</div>
+<!-- Data Table Container -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded overflow-hidden flex-1">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant bg-surface-container-low h-row-height-compact">
+<th class="px-4 font-label-caps text-label-caps text-on-surface-variant uppercase font-bold w-1/4">Operator</th>
+<th class="px-4 font-label-caps text-label-caps text-on-surface-variant uppercase font-bold w-1/4">Status</th>
+<th class="px-4 font-label-caps text-label-caps text-on-surface-variant uppercase font-bold w-1/4">Current Load</th>
+<th class="px-4 font-label-caps text-label-caps text-on-surface-variant uppercase font-bold w-1/4">Zone/Station</th>
+<th class="px-4 w-10"></th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm">
+<!-- Row 1 - Missing Assignment -->
+<tr class="border-b border-outline-variant h-row-height-standard data-table-row group cursor-pointer bg-error-container/20">
+<td class="px-4 font-medium text-on-surface flex items-center gap-2 h-row-height-standard">
+<div class="w-6 h-6 rounded bg-surface-container-highest flex items-center justify-center font-data-mono text-[10px] text-on-surface-variant">JD</div>
+                                        John Doe
+                                    </td>
+<td class="px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-caps text-label-caps uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Unassigned
+                                        </span>
+</td>
+<td class="px-4 font-data-mono text-data-mono text-on-surface-variant">0 / 4 tasks</td>
+<td class="px-4 text-on-surface-variant">--</td>
+<td class="px-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-[18px]" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 - Normal -->
+<tr class="border-b border-outline-variant h-row-height-standard data-table-row group cursor-pointer">
+<td class="px-4 font-medium text-on-surface flex items-center gap-2 h-row-height-standard">
+<div class="w-6 h-6 rounded bg-surface-container-highest flex items-center justify-center font-data-mono text-[10px] text-on-surface-variant">AS</div>
+                                        Alice Smith
+                                    </td>
+<td class="px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-caps text-label-caps uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Active
+                                        </span>
+</td>
+<td class="px-4 font-data-mono text-data-mono text-on-surface-variant">3 / 4 tasks</td>
+<td class="px-4 text-on-surface-variant">Zone Alpha - Bay 4</td>
+<td class="px-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-[18px]" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 - Overloaded -->
+<tr class="border-b border-outline-variant h-row-height-standard data-table-row group cursor-pointer">
+<td class="px-4 font-medium text-on-surface flex items-center gap-2 h-row-height-standard">
+<div class="w-6 h-6 rounded bg-surface-container-highest flex items-center justify-center font-data-mono text-[10px] text-on-surface-variant">RJ</div>
+                                        Robert Jones
+                                    </td>
+<td class="px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-container font-label-caps text-label-caps uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span> Overload
+                                        </span>
+</td>
+<td class="px-4 font-data-mono text-data-mono text-error">5 / 4 tasks</td>
+<td class="px-4 text-on-surface-variant">Zone Bravo - Bay 1</td>
+<td class="px-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-[18px]" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 - Normal -->
+<tr class="border-b border-outline-variant h-row-height-standard data-table-row group cursor-pointer">
+<td class="px-4 font-medium text-on-surface flex items-center gap-2 h-row-height-standard">
+<div class="w-6 h-6 rounded bg-surface-container-highest flex items-center justify-center font-data-mono text-[10px] text-on-surface-variant">EW</div>
+                                        Emily Wong
+                                    </td>
+<td class="px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-caps text-label-caps uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Active
+                                        </span>
+</td>
+<td class="px-4 font-data-mono text-data-mono text-on-surface-variant">2 / 4 tasks</td>
+<td class="px-4 text-on-surface-variant">Zone Charlie - Control</td>
+<td class="px-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-[18px]" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Right Column: Context & Feed -->
+<div class="flex flex-col gap-6">
+<!-- Quick Assign Panel (Glassmorphism inspired but subtle for corporate) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-4 relative overflow-hidden">
+<!-- Decorative background element -->
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-secondary/5 rounded-full blur-2xl pointer-events-none"></div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="bolt">bolt</span>
+                            Quick Reassign
+                        </h3>
+<div class="space-y-4">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Target Operator</label>
+<div class="relative">
+<select class="w-full h-row-height-compact bg-surface-container border border-outline-variant rounded px-3 font-body-sm text-body-sm text-on-surface appearance-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors">
+<option>Select Operator...</option>
+<option>John Doe (Available)</option>
+<option>Emily Wong (Light Load)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1.5 text-on-surface-variant pointer-events-none text-[18px]" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Pending Task</label>
+<div class="bg-surface-container border border-outline-variant rounded p-2 font-body-sm text-body-sm text-on-surface flex justify-between items-center cursor-pointer hover:bg-surface-variant transition-colors">
+<span>TSK-9921: Bay 4 Audit</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<button class="w-full bg-secondary text-on-secondary hover:bg-surface-tint rounded h-row-height-compact font-label-caps text-label-caps uppercase tracking-wider transition-colors mt-2">
+                                Execute Assignment
+                            </button>
+</div>
+</div>
+<!-- Recent Activity Feed -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded flex-1 flex flex-col overflow-hidden">
+<div class="p-4 border-b border-outline-variant bg-surface-container-low flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface text-[14px]">Assignment Feed</h3>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="history">history</span>
+</button>
+</div>
+<div class="p-4 flex-1 overflow-y-auto">
+<div class="relative pl-4 space-y-6 before:absolute before:inset-y-0 before:left-[7px] before:w-px before:bg-outline-variant">
+<!-- Feed Item 1 -->
+<div class="relative">
+<div class="absolute -left-[11px] top-1 w-[7px] h-[7px] rounded-full bg-secondary border-2 border-surface-container-lowest"></div>
+<div class="font-data-mono text-data-mono text-on-surface-variant text-[11px] mb-1">10:42 AM</div>
+<div class="font-body-sm text-body-sm text-on-surface">
+<span class="font-medium">Emily Wong</span> assigned to <span class="font-data-mono bg-surface-container px-1 rounded text-[11px]">TSK-9920</span> by Auto-Router.
+                                    </div>
+</div>
+<!-- Feed Item 2 -->
+<div class="relative">
+<div class="absolute -left-[11px] top-1 w-[7px] h-[7px] rounded-full bg-error border-2 border-surface-container-lowest"></div>
+<div class="font-data-mono text-data-mono text-on-surface-variant text-[11px] mb-1">10:15 AM</div>
+<div class="font-body-sm text-body-sm text-on-surface">
+<span class="font-medium text-error">Alert:</span> John Doe assignment removed. Station offline.
+                                    </div>
+</div>
+<!-- Feed Item 3 -->
+<div class="relative">
+<div class="absolute -left-[11px] top-1 w-[7px] h-[7px] rounded-full bg-outline border-2 border-surface-container-lowest"></div>
+<div class="font-data-mono text-data-mono text-on-surface-variant text-[11px] mb-1">09:00 AM</div>
+<div class="font-body-sm text-body-sm text-on-surface">
+                                        Shift handover completed. 24 operators synced.
+                                    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container-low text-on-surface-variant dark:text-on-surface-variant font-data-mono text-data-mono fixed bottom-0 right-0 md:left-[240px] left-0 h-8 border-t border-outline-variant dark:border-outline flat no shadows flex justify-between items-center px-4 z-40 opacity-90">
+<div>ShiftLedger v2.4.1 • Last Sync: 2m ago</div>
+<div class="flex gap-4">
+<a class="hover:underline" href="#">System Status</a>
+<a class="hover:underline" href="#">Documentation</a>
+</div>
+</footer>
+</body></html>

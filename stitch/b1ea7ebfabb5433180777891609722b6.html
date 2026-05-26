@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Operator Operations - ShiftLedger Lite</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#45464d",
+                        "secondary-container": "#316bf3",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#dbe1ff",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "primary-container": "#131b2e",
+                        "on-primary-fixed": "#131b2e",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "inverse-surface": "#303032",
+                        "surface-bright": "#fcf8fa",
+                        "on-error": "#ffffff",
+                        "surface-container": "#f0edef",
+                        "primary": "#000000",
+                        "on-tertiary-fixed": "#271901",
+                        "on-secondary-fixed-variant": "#003ea8",
+                        "primary-fixed-dim": "#bec6e0",
+                        "inverse-primary": "#bec6e0",
+                        "surface-tint": "#565e74",
+                        "on-surface": "#1b1b1d",
+                        "background": "#fcf8fa",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "surface-container-highest": "#e4e2e4",
+                        "inverse-on-surface": "#f3f0f2",
+                        "surface-container-low": "#f6f3f5",
+                        "on-background": "#1b1b1d",
+                        "primary-fixed": "#dae2fd",
+                        "on-secondary-container": "#fefcff",
+                        "on-primary-container": "#7c839b",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#98805d",
+                        "outline-variant": "#c6c6cd",
+                        "surface-variant": "#e4e2e4",
+                        "outline": "#76777d",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#00174b",
+                        "surface": "#fcf8fa",
+                        "tertiary": "#000000",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#0051d5",
+                        "surface-dim": "#dcd9db",
+                        "tertiary-container": "#271901",
+                        "tertiary-fixed": "#fcdeb5",
+                        "surface-container-high": "#eae7e9",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#574425"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "row-height-standard": "44px",
+                        "stack-md": "0.75rem",
+                        "unit": "4px",
+                        "container-padding": "1.5rem",
+                        "row-height-compact": "32px",
+                        "stack-sm": "0.25rem",
+                        "gutter": "1rem"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "display": ["Inter"],
+                        "body-base": ["Inter"],
+                        "display-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "data-mono": ["jetbrainsMono"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "display": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-base": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display-mobile": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-md": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "data-mono": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-base text-body-base overflow-hidden flex h-screen">
+<!-- SideNavBar (Shared Component) -->
+<nav class="w-[240px] h-screen fixed left-0 top-0 bg-surface dark:bg-inverse-surface border-r border-outline-variant dark:border-outline flex flex-col h-full py-4 z-20">
+<!-- Brand / Header -->
+<div class="px-container-padding mb-8">
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface dark:text-on-background truncate" title="ShiftLedger Lite">ShiftLedger Lite</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant dark:text-on-surface-variant truncate mt-1">Operational Handoff</p>
+</div>
+<!-- Main Nav Tabs -->
+<ul class="flex-1 space-y-unit px-unit">
+<li>
+<a class="flex items-center space-x-3 px-3 py-2 rounded-DEFAULT bg-surface-container-high dark:bg-surface-container-highest text-secondary dark:text-secondary-fixed-dim font-bold border-r-2 border-secondary opacity-80 duration-150 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span>Operations</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant dark:text-on-surface-variant font-medium hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Status Board</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant dark:text-on-surface-variant font-medium hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="assignment_ind">assignment_ind</span>
+<span>Assignments</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant dark:text-on-surface-variant font-medium hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Insights</span>
+</a>
+</li>
+</ul>
+<!-- Footer Tabs -->
+<div class="mt-auto px-unit space-y-unit">
+<a class="flex items-center space-x-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant dark:text-on-surface-variant font-medium hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant dark:text-on-surface-variant font-medium hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span>Support</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area Wrapper -->
+<div class="flex-1 ml-[240px] flex flex-col h-screen overflow-hidden">
+<!-- TopAppBar (Shared Component) -->
+<header class="bg-surface-container-lowest dark:bg-surface-container-low border-b border-outline-variant dark:border-outline docked full-width top-0 h-12 flex justify-between items-center px-container-padding z-10">
+<!-- Left: Search (on_left) -->
+<div class="flex items-center w-64 relative">
+<span class="material-symbols-outlined absolute left-2 text-on-surface-variant text-sm" data-icon="search">search</span>
+<input class="w-full pl-8 pr-3 h-8 bg-surface dark:bg-inverse-surface border border-outline-variant dark:border-outline rounded-DEFAULT font-body-sm text-body-sm text-primary dark:text-inverse-primary focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-colors" placeholder="Search Records..." type="text"/>
+</div>
+<!-- Center/Logo spacing -->
+<div class="flex-1 flex justify-center invisible md:visible">
+<!-- Logo is handled in sidebar for this layout, keeping space balanced -->
+</div>
+<!-- Right: Actions -->
+<div class="flex items-center space-x-gutter">
+<button class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high px-3 h-8 rounded-DEFAULT transition-colors flex items-center">
+                    Sync
+                </button>
+<button class="font-label-caps text-label-caps bg-primary text-on-primary px-4 h-8 rounded-DEFAULT hover:opacity-90 transition-opacity flex items-center shadow-sm">
+                    Create Record
+                </button>
+<div class="flex items-center space-x-2 border-l border-outline-variant dark:border-outline pl-gutter ml-gutter">
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high p-1 rounded-DEFAULT transition-colors flex items-center justify-center h-8 w-8">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high p-1 rounded-DEFAULT transition-colors flex items-center justify-center h-8 w-8">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 overflow-y-auto bg-background p-container-padding pb-16 flex flex-col gap-container-padding relative">
+<!-- Summary Metrics Bento Grid -->
+<section class="grid grid-cols-3 gap-gutter">
+<!-- Metric 1 -->
+<div class="bg-surface border border-outline-variant rounded-lg p-4 flex flex-col justify-between h-24">
+<div class="font-label-caps text-label-caps text-on-surface-variant flex items-center justify-between">
+<span>Active Operators</span>
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="group">group</span>
+</div>
+<div class="font-display text-display text-primary">
+                        42
+                    </div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface border border-outline-variant rounded-lg p-4 flex flex-col justify-between h-24">
+<div class="font-label-caps text-label-caps text-on-surface-variant flex items-center justify-between">
+<span>Open Tasks</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="checklist">checklist</span>
+</div>
+<div class="font-display text-display text-primary">
+                        128
+                    </div>
+</div>
+<!-- Metric 3 (Alert state) -->
+<div class="bg-error-container border border-error-container rounded-lg p-4 flex flex-col justify-between h-24">
+<div class="font-label-caps text-label-caps text-on-error-container flex items-center justify-between">
+<span>Priority Incidents</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="warning">warning</span>
+</div>
+<div class="font-display text-display text-on-error-container">
+                        3
+                    </div>
+</div>
+</section>
+<!-- Data Table Section -->
+<section class="flex-1 flex gap-gutter min-h-0">
+<!-- Main Table Area -->
+<div class="flex-1 bg-surface border border-outline-variant rounded-lg flex flex-col overflow-hidden">
+<!-- Table Action Bar -->
+<div class="h-12 border-b border-outline-variant px-4 flex items-center justify-between bg-surface-container-lowest">
+<h2 class="font-headline-md text-headline-md text-primary">Operator Roster</h2>
+<div class="flex items-center gap-2">
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:bg-surface-container px-2 py-1 rounded-DEFAULT transition-colors flex items-center gap-1 border border-outline-variant">
+<span class="material-symbols-outlined text-[14px]" data-icon="filter_list">filter_list</span> Filter
+                            </button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:bg-surface-container px-2 py-1 rounded-DEFAULT transition-colors flex items-center gap-1 border border-outline-variant">
+<span class="material-symbols-outlined text-[14px]" data-icon="sort">sort</span> Sort
+                            </button>
+</div>
+</div>
+<!-- Table Content (Scrollable) -->
+<div class="flex-1 overflow-auto">
+<table class="w-full text-left border-collapse">
+<thead class="sticky top-0 bg-surface-container-low border-b border-outline-variant z-10">
+<tr>
+<th class="px-4 py-2 font-label-caps text-label-caps text-on-surface-variant font-medium w-12">ID</th>
+<th class="px-4 py-2 font-label-caps text-label-caps text-on-surface-variant font-medium">Operator Name</th>
+<th class="px-4 py-2 font-label-caps text-label-caps text-on-surface-variant font-medium">Status</th>
+<th class="px-4 py-2 font-label-caps text-label-caps text-on-surface-variant font-medium">Last Activity</th>
+<th class="px-4 py-2 font-label-caps text-label-caps text-on-surface-variant font-medium">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm text-on-surface divide-y divide-surface-variant">
+<!-- Row 1 (Selected) -->
+<tr class="h-[32px] bg-surface-container-highest hover:bg-surface-container transition-colors cursor-pointer group">
+<td class="px-4 font-data-mono text-data-mono text-on-surface-variant">OP-091</td>
+<td class="px-4 font-medium text-primary">Sarah Jenkins</td>
+<td class="px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-DEFAULT bg-[#e6f4ea] text-[#137333] border border-[#ceead6] text-[10px] font-bold uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-[#137333]"></span> Active
+                                        </span>
+</td>
+<td class="px-4 font-data-mono text-data-mono text-on-surface-variant">10:42:01 Z</td>
+<td class="px-4 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-secondary hover:underline font-label-caps text-label-caps">Edit</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="h-[32px] hover:bg-surface-container transition-colors cursor-pointer group">
+<td class="px-4 font-data-mono text-data-mono text-on-surface-variant">OP-092</td>
+<td class="px-4 font-medium text-primary">Marcus Vance</td>
+<td class="px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-DEFAULT bg-[#fef7e0] text-[#b06000] border border-[#fce8b2] text-[10px] font-bold uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-[#b06000]"></span> Standby
+                                        </span>
+</td>
+<td class="px-4 font-data-mono text-data-mono text-on-surface-variant">10:38:15 Z</td>
+<td class="px-4 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-secondary hover:underline font-label-caps text-label-caps">Edit</button>
+</td>
+</tr>
+<!-- Row 3 (Error State) -->
+<tr class="h-[32px] hover:bg-surface-container transition-colors cursor-pointer group bg-error-container/10">
+<td class="px-4 font-data-mono text-data-mono text-on-surface-variant">OP-088</td>
+<td class="px-4 font-medium text-primary">Elena Rodriguez</td>
+<td class="px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-DEFAULT bg-error-container text-on-error-container border border-error-container text-[10px] font-bold uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-[#93000a]"></span> Offline
+                                        </span>
+</td>
+<td class="px-4 font-data-mono text-data-mono text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="sync_problem">sync_problem</span> Sync Fail
+                                    </td>
+<td class="px-4 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity flex gap-2">
+<button class="text-secondary hover:underline font-label-caps text-label-caps">Edit</button>
+<button class="text-on-surface-variant hover:text-primary font-label-caps text-label-caps flex items-center gap-1"><span class="material-symbols-outlined text-[12px]" data-icon="refresh">refresh</span> Retry</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="h-[32px] hover:bg-surface-container transition-colors cursor-pointer group">
+<td class="px-4 font-data-mono text-data-mono text-on-surface-variant">OP-104</td>
+<td class="px-4 font-medium text-primary">David Chen</td>
+<td class="px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-DEFAULT bg-[#e6f4ea] text-[#137333] border border-[#ceead6] text-[10px] font-bold uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-[#137333]"></span> Active
+                                        </span>
+</td>
+<td class="px-4 font-data-mono text-data-mono text-on-surface-variant">10:15:22 Z</td>
+<td class="px-4 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-secondary hover:underline font-label-caps text-label-caps">Edit</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Side Panel (Selected Item Preview) -->
+<aside class="w-80 bg-surface border border-outline-variant rounded-lg flex flex-col overflow-hidden">
+<div class="h-12 border-b border-outline-variant px-4 flex items-center justify-between bg-surface-container-low">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Inspector</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]" data-icon="close">close</span>
+</button>
+</div>
+<div class="p-4 flex-1 overflow-y-auto">
+<!-- Profile Header -->
+<div class="flex items-center gap-3 mb-6">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary font-bold border border-outline-variant overflow-hidden">
+<img alt="Profile Sarah Jenkins" class="w-full h-full object-cover" data-alt="Professional headshot of a female tech operator in a brightly lit modern office environment, wearing a dark blazer over a simple shirt. She has a focused but approachable expression. High key corporate photography style with a shallow depth of field blurring the background slightly." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlAyrFxTLuur-ukLrK39B0nzHjg6BsZw5vGfe6_H0AzVlDuWYX6vuIR4Qdx-4c4xbTWTpSkYM05-w3_XRTO8uaT_nuRNAvpLns5awLjvwq6mbH-fCNJgI7BJkpW2Pp9JM23yx6I8Fq0xP9SAdYqpCMzO5JlYu4svKWdGB9KCu-l-SWR0DqVSuWyUV_wCx2jtzXIJa8j7Ix7lfo5AVQpxLcjtvisTQUKXMPX0XXw0f7Hh0YmA-rRzp9Ox-Y1avQ8jqiyQUHUXJxkOEx"/>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary m-0">Sarah Jenkins</h3>
+<div class="font-data-mono text-data-mono text-on-surface-variant text-[11px] mt-0.5">OP-091 • Tier 2</div>
+</div>
+</div>
+<!-- Details Grid -->
+<div class="space-y-4">
+<div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">Current Assignment</div>
+<div class="font-body-sm text-body-sm text-primary border border-outline-variant rounded-DEFAULT p-2 bg-background flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="terminal">terminal</span> Server Cluster Alpha Maint.
+                                </div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">Shift Start</div>
+<div class="font-data-mono text-data-mono text-primary text-[12px]">08:00 Z</div>
+</div>
+<div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">Uptime</div>
+<div class="font-data-mono text-data-mono text-primary text-[12px]">2h 42m</div>
+</div>
+</div>
+<hr class="border-outline-variant"/>
+<!-- Shift Handover Feed (Mini) -->
+<div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-3 flex justify-between items-center">
+                                    Recent Logs
+                                    <span class="material-symbols-outlined text-[14px]" data-icon="history">history</span>
+</div>
+<div class="space-y-3 relative before:absolute before:inset-0 before:ml-[5px] before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-surface-variant before:to-transparent">
+<div class="relative flex items-start space-x-3">
+<div class="w-3 h-3 rounded-full bg-secondary border-2 border-surface mt-1 z-10 relative"></div>
+<div class="flex-1">
+<div class="font-data-mono text-data-mono text-on-surface-variant text-[10px] mb-0.5">10:42:01 Z</div>
+<div class="font-body-sm text-body-sm text-primary">Initiated diagnostics sequence on Node 3.</div>
+</div>
+</div>
+<div class="relative flex items-start space-x-3">
+<div class="w-3 h-3 rounded-full bg-surface-variant border-2 border-surface mt-1 z-10 relative"></div>
+<div class="flex-1">
+<div class="font-data-mono text-data-mono text-on-surface-variant text-[10px] mb-0.5">09:15:44 Z</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Cleared low-priority alert queue.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Panel Actions -->
+<div class="p-4 border-t border-outline-variant bg-surface-container-lowest flex gap-2">
+<button class="flex-1 font-label-caps text-label-caps border border-outline-variant text-primary px-3 h-8 rounded-DEFAULT hover:bg-surface-container transition-colors flex items-center justify-center">
+                            Message
+                        </button>
+<button class="flex-1 font-label-caps text-label-caps bg-primary text-on-primary px-3 h-8 rounded-DEFAULT hover:opacity-90 transition-opacity flex items-center justify-center">
+                            Assign Task
+                        </button>
+</div>
+</aside>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-surface-container dark:bg-surface-container-low border-t border-outline-variant dark:border-outline fixed bottom-0 right-0 left-[240px] h-8 flex justify-between items-center px-4 z-10 opacity-90">
+<div class="font-data-mono text-data-mono text-on-surface-variant dark:text-on-surface-variant text-[11px]">
+                ShiftLedger v2.4.1 • Last Sync: 2m ago
+            </div>
+<div class="flex space-x-4">
+<a class="font-data-mono text-data-mono text-[11px] text-on-surface-variant dark:text-on-surface-variant hover:underline" href="#">System Status</a>
+<a class="font-data-mono text-data-mono text-[11px] text-on-surface-variant dark:text-on-surface-variant hover:underline" href="#">Documentation</a>
+</div>
+</footer>
+</div>
+</body></html>

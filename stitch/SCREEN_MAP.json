@@ -1,0 +1,56 @@
+[
+  {
+    "screenId": "9e9cef32fbe546fb9ad0bdcd81c0cd61",
+    "name": "Operator Editor - ShiftLedger Lite",
+    "type": "form",
+    "description": "Operator Editor - ShiftLedger Lite screen",
+    "surfaceIds": [
+      "SURF_OPERATOR_EDITOR"
+    ]
+  },
+  {
+    "screenId": "83ef15c7a1b14e55a0e8a6942b5af840",
+    "name": "Operator Assignment - ShiftLedger Lite",
+    "type": "app-screen",
+    "description": "Operator Assignment - ShiftLedger Lite screen",
+    "surfaceIds": [
+      "SURF_OPERATOR_ASSIGNMENT"
+    ]
+  },
+  {
+    "screenId": "b1ea7ebfabb5433180777891609722b6",
+    "name": "Operator Operations - ShiftLedger Lite",
+    "type": "app-screen",
+    "description": "Operator Operations - ShiftLedger Lite screen",
+    "surfaceIds": [
+      "SURF_OPERATOR_OPERATIONS"
+    ]
+  },
+  {
+    "screenId": "57219ab8bdfa49e4860194ea60266cfd",
+    "name": "Status Board - ShiftLedger Lite",
+    "type": "app-screen",
+    "description": "Status Board - ShiftLedger Lite screen",
+    "surfaceIds": [
+      "SURF_STATUS_BOARD"
+    ]
+  },
+  {
+    "screenId": "7902aeecda09476997a7ef1ebb837333",
+    "name": "Insights - ShiftLedger Lite",
+    "type": "app-screen",
+    "description": "Insights - ShiftLedger Lite screen",
+    "surfaceIds": [
+      "SURF_INSIGHTS"
+    ]
+  },
+  {
+    "screenId": "69ec0ddc999a4bf4a1019765b5cfa0ae",
+    "name": "Settings and Preferences - ShiftLedger Lite",
+    "type": "settings",
+    "description": "Settings and Preferences - ShiftLedger Lite screen",
+    "surfaceIds": [
+      "SURF_SETTINGS_AND_PREFERENCES"
+    ]
+  }
+]

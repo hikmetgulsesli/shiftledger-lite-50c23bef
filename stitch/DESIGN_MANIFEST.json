@@ -1,0 +1,68 @@
+[
+  {
+    "screenId": "9e9cef32fbe546fb9ad0bdcd81c0cd61",
+    "title": "Operator Editor - ShiftLedger Lite",
+    "htmlFile": "9e9cef32fbe546fb9ad0bdcd81c0cd61.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2M1Yzc5OWNlYjY5MDQ5YjhiMzViNDdjMjcyYzAwMzIyEgsSBxCN19Wi9xcYAZIBJAoKcHJvamVjdF9pZBIWQhQxMDQ2NDE0NzMyMTMyNTUxNDI2OA&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/shiftledger-lite-50c23bef/stitch/9e9cef32fbe546fb9ad0bdcd81c0cd61.html",
+    "surfaceIds": [
+      "SURF_OPERATOR_EDITOR"
+    ]
+  },
+  {
+    "screenId": "83ef15c7a1b14e55a0e8a6942b5af840",
+    "title": "Operator Assignment - ShiftLedger Lite",
+    "htmlFile": "83ef15c7a1b14e55a0e8a6942b5af840.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzQ2MmY2YmI3Y2EwOTQyZjg5ZTY5ZDlmMmZkMTQ3MGY1EgsSBxCN19Wi9xcYAZIBJAoKcHJvamVjdF9pZBIWQhQxMDQ2NDE0NzMyMTMyNTUxNDI2OA&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/shiftledger-lite-50c23bef/stitch/83ef15c7a1b14e55a0e8a6942b5af840.html",
+    "surfaceIds": [
+      "SURF_OPERATOR_ASSIGNMENT"
+    ]
+  },
+  {
+    "screenId": "b1ea7ebfabb5433180777891609722b6",
+    "title": "Operator Operations - ShiftLedger Lite",
+    "htmlFile": "b1ea7ebfabb5433180777891609722b6.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzU5NmFjMzhhNTdhOTRhYWY4OGY5ZDJhOWE3MGQxM2ZhEgsSBxCN19Wi9xcYAZIBJAoKcHJvamVjdF9pZBIWQhQxMDQ2NDE0NzMyMTMyNTUxNDI2OA&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/shiftledger-lite-50c23bef/stitch/b1ea7ebfabb5433180777891609722b6.html",
+    "surfaceIds": [
+      "SURF_OPERATOR_OPERATIONS"
+    ]
+  },
+  {
+    "screenId": "57219ab8bdfa49e4860194ea60266cfd",
+    "title": "Status Board - ShiftLedger Lite",
+    "htmlFile": "57219ab8bdfa49e4860194ea60266cfd.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2VlZTcyODBhZTNkZjQ0MzZiZDQzMTEzNWM5ZjdkZDkxEgsSBxCN19Wi9xcYAZIBJAoKcHJvamVjdF9pZBIWQhQxMDQ2NDE0NzMyMTMyNTUxNDI2OA&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/shiftledger-lite-50c23bef/stitch/57219ab8bdfa49e4860194ea60266cfd.html",
+    "surfaceIds": [
+      "SURF_STATUS_BOARD"
+    ]
+  },
+  {
+    "screenId": "7902aeecda09476997a7ef1ebb837333",
+    "title": "Insights - ShiftLedger Lite",
+    "htmlFile": "7902aeecda09476997a7ef1ebb837333.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzY4MjZjZDc4YTcxYzQ2OTI5MzVkNTRmNmQ0N2Q3NWUwEgsSBxCN19Wi9xcYAZIBJAoKcHJvamVjdF9pZBIWQhQxMDQ2NDE0NzMyMTMyNTUxNDI2OA&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/shiftledger-lite-50c23bef/stitch/7902aeecda09476997a7ef1ebb837333.html",
+    "surfaceIds": [
+      "SURF_INSIGHTS"
+    ]
+  },
+  {
+    "screenId": "69ec0ddc999a4bf4a1019765b5cfa0ae",
+    "title": "Settings and Preferences - ShiftLedger Lite",
+    "htmlFile": "69ec0ddc999a4bf4a1019765b5cfa0ae.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzk4ZTUzZDBkNDU5MTRkODBiYjQ2ZDVmMjVjNzk2YzNkEgsSBxCN19Wi9xcYAZIBJAoKcHJvamVjdF9pZBIWQhQxMDQ2NDE0NzMyMTMyNTUxNDI2OA&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/shiftledger-lite-50c23bef/stitch/69ec0ddc999a4bf4a1019765b5cfa0ae.html",
+    "surfaceIds": [
+      "SURF_SETTINGS_AND_PREFERENCES"
+    ]
+  }
+]
