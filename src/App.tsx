@@ -1,10 +1,4 @@
-import {
-  useCallback,
-  useEffect,
-  useMemo,
-  useReducer,
-  type Dispatch,
-} from 'react';
+import { useEffect, useMemo, useReducer, type Dispatch } from 'react';
 import {
   InsightsShiftledgerLite,
   OperatorAssignmentShiftledgerLite,
@@ -32,19 +26,8 @@ import {
   loadShiftLedgerLiteState,
   saveShiftLedgerLiteState,
 } from './features/shiftledger-lite/shiftledger-lite.repo';
-import { act_export_summary } from './features/surf-insights/act_export_summary';
-import { act_filter_insights } from './features/surf-insights/act_filter_insights';
-import { act_assign_record as assignOperatorRecord } from './features/surf-operator-assignment/act_assign_record';
-import { act_filter_insights as filterAssignmentInsights } from './features/surf-operator-assignment/act_filter_insights';
-import { act_select_record as selectAssignmentRecord } from './features/surf-operator-assignment/act_select_record';
-import { act_cancel_edit as cancelOperatorEdit } from './features/surf-operator-editor/act_cancel_edit';
-import { act_save_record as saveOperatorRecord } from './features/surf-operator-editor/act_save_record';
-import { act_create_record as createOperatorRecord } from './features/surf-operator-operations/act_create_record';
-import { act_retry_load as retryOperatorLoad } from './features/surf-operator-operations/act_retry_load';
-import { act_select_record as selectOperatorRecord } from './features/surf-operator-operations/act_select_record';
-import { act_search_records as act_search_status_board_records } from './features/surf-status-board/act_search_records';
-import { act_select_record as act_select_status_board_record } from './features/surf-status-board/act_select_record';
-import { act_update_record_status } from './features/surf-status-board/act_update_record_status';
+import { act_retry_load } from './features/surf-settings-and-preferences/act_retry_load';
+import { act_save_preferences } from './features/surf-settings-and-preferences/act_save_preferences';
 import { publishShiftLedgerLiteBridge } from './test/bridge';
 
 const initialState = createShiftLedgerLiteSnapshot(
@@ -83,19 +66,16 @@ export default function App() {
     publishShiftLedgerLiteBridge(state);
   }, [state]);
 
-  const runAction = useCallback((id: string) => {
+  const runAction = (id: string) => {
     const screen = navigationTargets[id];
     if (screen) {
       dispatch({ type: 'navigate', screen });
       return;
     }
 
-    const action =
-      screenActionDispatch[state.activeScreen]?.[id] ??
-      actionDispatch[id] ??
-      { type: 'panel', panel: id };
+    const action = actionDispatch[id] ?? { type: 'panel', panel: id };
     dispatch(action);
-  }, [state.activeScreen]);
+  };
 
   const operationsActions = useMemo(
     () =>
@@ -126,7 +106,7 @@ export default function App() {
         ],
         runAction,
       ),
-    [runAction],
+    [],
   );
 
   const statusBoardActions = useMemo(
@@ -157,7 +137,7 @@ export default function App() {
         ],
         runAction,
       ),
-    [runAction],
+    [],
   );
 
   const assignmentActions = useMemo(
@@ -186,7 +166,7 @@ export default function App() {
         ],
         runAction,
       ),
-    [runAction],
+    [],
   );
 
   const insightsActions = useMemo(
@@ -213,7 +193,7 @@ export default function App() {
         ],
         runAction,
       ),
-    [runAction],
+    [],
   );
 
   const settingsActions = useMemo(
@@ -240,7 +220,7 @@ export default function App() {
         ],
         runAction,
       ),
-    [runAction],
+    [],
   );
 
   const editorActions = useMemo(
@@ -249,7 +229,7 @@ export default function App() {
         ['go-back-1', 'cancel-2', 'save-record-3'],
         runAction,
       ),
-    [runAction],
+    [],
   );
 
   return (
@@ -283,55 +263,20 @@ export default function App() {
 const actionDispatch: Record<string, ShiftLedgerLiteAction> = {
   'sync-1': { type: 'storageStatus', status: 'synced' },
   'sync-2': { type: 'storageStatus', status: 'synced' },
-  'create-record-1': createOperatorRecord(),
-  'create-record-2': createOperatorRecord(),
-  'create-record-3': createOperatorRecord(),
+  'create-record-1': { type: 'openEditor' },
+  'create-record-2': { type: 'openEditor' },
+  'create-record-3': { type: 'openEditor' },
+  'edit-7': { type: 'openEditor', selectedRecordId: 'OPS-1042' },
+  'edit-8': { type: 'openEditor', selectedRecordId: 'OPS-1043' },
+  'edit-9': { type: 'openEditor', selectedRecordId: 'OPS-1044' },
+  'retry-10': { type: 'storageStatus', status: 'saved' },
+  'edit-11': { type: 'openEditor', selectedRecordId: 'OPS-1045' },
   'go-back-1': { type: 'navigate', screen: 'operations' },
-  'cancel-2': cancelOperatorEdit(),
-  'save-record-3': saveOperatorRecord(),
+  'cancel-2': { type: 'navigate', screen: 'operations' },
+  'save-record-3': { type: 'storageStatus', status: 'saved' },
   'reset-to-defaults-7': { type: 'resetPreferences' },
   'reset-controls-8': { type: 'resetPreferences' },
-  'save-changes-9': { type: 'storageStatus', status: 'saved' },
-};
-
-const screenActionDispatch: Partial<
-  Record<ShiftLedgerLiteScreen, Record<string, ShiftLedgerLiteAction>>
-> = {
-  operations: {
-    'filter-5': { type: 'panel', panel: 'operations-filter' },
-    'sort-6': { type: 'panel', panel: 'operations-sort' },
-    'edit-7': selectOperatorRecord('OPS-1042'),
-    'edit-8': selectOperatorRecord('OPS-1043'),
-    'edit-9': selectOperatorRecord('OPS-1044'),
-    'retry-10': retryOperatorLoad(),
-    'edit-11': selectOperatorRecord('OPS-1045'),
-  },
-  statusBoard: {
-    'filter-list-5': act_search_status_board_records(),
-    'view-week-6': { type: 'panel', panel: 'status-board-week-view' },
-    'more-horiz-7': act_select_status_board_record('OPS-1042'),
-    'more-horiz-8': act_select_status_board_record('OPS-1043'),
-    'edit-9': act_select_status_board_record('OPS-1044'),
-    'more-horiz-10': act_select_status_board_record('OPS-1044'),
-    'resolve-11': act_update_record_status('OPS-1044'),
-    'more-horiz-12': act_select_status_board_record('OPS-1045'),
-    'sign-off-13': act_update_record_status('OPS-1045', 'signed-off'),
-  },
-  assignments: {
-    'bulk-assign-5': assignOperatorRecord(),
-    'more-vert-6': selectAssignmentRecord('OPS-1042'),
-    'more-vert-7': selectAssignmentRecord('OPS-1043'),
-    'more-vert-8': selectAssignmentRecord('OPS-1044'),
-    'more-vert-9': selectAssignmentRecord('OPS-1045'),
-    'execute-assignment-10': assignOperatorRecord('OPS-1042'),
-    'history-11': filterAssignmentInsights('assignment-history'),
-  },
-  insights: {
-    'filter-6': act_filter_insights(),
-    'export-7': act_export_summary(),
-    'view-tasks-8': { type: 'navigate', screen: 'assignments' },
-    'more-vert-9': { type: 'panel', panel: 'insights-actions' },
-  },
+  'save-changes-9': act_save_preferences(),
 };
 
 function PersistenceStatus({
@@ -360,7 +305,7 @@ function PersistenceStatus({
               type="button"
               data-action-id="retry-persistence"
               onClick={() =>
-                dispatch({ type: 'storageStatus', status: 'saved' })
+                dispatch(act_retry_load())
               }
               className="rounded-md border border-primary px-3 py-1 font-medium text-primary"
             >
