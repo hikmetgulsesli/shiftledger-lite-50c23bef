@@ -1,0 +1,1456 @@
+[
+  {
+    "screenId": "9e9cef32fbe546fb9ad0bdcd81c0cd61",
+    "screenTitle": "Operator Editor - ShiftLedger Lite",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "Go Back",
+        "line": 113
+      },
+      {
+        "type": "button",
+        "label": "Cancel",
+        "line": 204
+      },
+      {
+        "type": "button",
+        "label": "Record",
+        "line": 207
+      },
+      {
+        "type": "input",
+        "label": "text",
+        "inputType": "text",
+        "line": 141
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 149
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 170
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 183
+      },
+      {
+        "type": "input",
+        "label": "textarea",
+        "inputType": "textarea",
+        "line": 196
+      },
+      {
+        "type": "form",
+        "label": "form",
+        "line": 131
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "Go Back",
+        "line": 113
+      },
+      {
+        "type": "button",
+        "label": "Cancel",
+        "line": 204
+      },
+      {
+        "type": "button",
+        "label": "Record",
+        "line": 207
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "text",
+        "inputType": "text",
+        "line": 141
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 149
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 170
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 183
+      },
+      {
+        "type": "input",
+        "label": "textarea",
+        "inputType": "textarea",
+        "line": 196
+      }
+    ],
+    "hardcodedData": [
+      "Jane Doe"
+    ],
+    "totalInteractive": 9,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "83ef15c7a1b14e55a0e8a6942b5af840",
+    "screenTitle": "Operator Assignment - ShiftLedger Lite",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 143
+      },
+      {
+        "type": "link",
+        "label": "Status Board",
+        "href": "#",
+        "line": 147
+      },
+      {
+        "type": "link",
+        "label": "Assignments",
+        "href": "#",
+        "line": 151
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 155
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 161
+      },
+      {
+        "type": "link",
+        "label": "Support",
+        "href": "#",
+        "line": 165
+      },
+      {
+        "type": "link",
+        "label": "System Status",
+        "href": "#",
+        "line": 392
+      },
+      {
+        "type": "link",
+        "label": "Documentation",
+        "href": "#",
+        "line": 393
+      },
+      {
+        "type": "button",
+        "label": "Create Record",
+        "line": 119
+      },
+      {
+        "type": "button",
+        "label": "sync",
+        "line": 122
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 127
+      },
+      {
+        "type": "button",
+        "label": "account_circle",
+        "line": 130
+      },
+      {
+        "type": "button",
+        "label": "Bulk Assign",
+        "line": 217
+      },
+      {
+        "type": "button",
+        "label": "more_vert",
+        "line": 247
+      },
+      {
+        "type": "button",
+        "label": "more_vert",
+        "line": 266
+      },
+      {
+        "type": "button",
+        "label": "more_vert",
+        "line": 285
+      },
+      {
+        "type": "button",
+        "label": "more_vert",
+        "line": 304
+      },
+      {
+        "type": "button",
+        "label": "Execute Assignment",
+        "line": 342
+      },
+      {
+        "type": "button",
+        "label": "history",
+        "line": 351
+      },
+      {
+        "type": "input",
+        "label": "Search operators or assignments...",
+        "inputType": "text",
+        "placeholder": "Search operators or assignments...",
+        "line": 115
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 327
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 143
+      },
+      {
+        "type": "link",
+        "label": "Status Board",
+        "href": "#",
+        "line": 147
+      },
+      {
+        "type": "link",
+        "label": "Assignments",
+        "href": "#",
+        "line": 151
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 155
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 161
+      },
+      {
+        "type": "link",
+        "label": "Support",
+        "href": "#",
+        "line": 165
+      },
+      {
+        "type": "link",
+        "label": "System Status",
+        "href": "#",
+        "line": 392
+      },
+      {
+        "type": "link",
+        "label": "Documentation",
+        "href": "#",
+        "line": 393
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "Create Record",
+        "line": 119
+      },
+      {
+        "type": "button",
+        "label": "sync",
+        "line": 122
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 127
+      },
+      {
+        "type": "button",
+        "label": "account_circle",
+        "line": 130
+      },
+      {
+        "type": "button",
+        "label": "Bulk Assign",
+        "line": 217
+      },
+      {
+        "type": "button",
+        "label": "more_vert",
+        "line": 247
+      },
+      {
+        "type": "button",
+        "label": "more_vert",
+        "line": 266
+      },
+      {
+        "type": "button",
+        "label": "more_vert",
+        "line": 285
+      },
+      {
+        "type": "button",
+        "label": "more_vert",
+        "line": 304
+      },
+      {
+        "type": "button",
+        "label": "Execute Assignment",
+        "line": 342
+      },
+      {
+        "type": "button",
+        "label": "history",
+        "line": 351
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "Search operators or assignments...",
+        "inputType": "text",
+        "placeholder": "Search operators or assignments...",
+        "line": 115
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 327
+      }
+    ],
+    "hardcodedData": [
+      "John Doe"
+    ],
+    "totalInteractive": 21,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "b1ea7ebfabb5433180777891609722b6",
+    "screenTitle": "Operator Operations - ShiftLedger Lite",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 114
+      },
+      {
+        "type": "link",
+        "label": "Status Board",
+        "href": "#",
+        "line": 120
+      },
+      {
+        "type": "link",
+        "label": "Assignments",
+        "href": "#",
+        "line": 126
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 132
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 140
+      },
+      {
+        "type": "link",
+        "label": "Support",
+        "href": "#",
+        "line": 144
+      },
+      {
+        "type": "link",
+        "label": "System Status",
+        "href": "#",
+        "line": 389
+      },
+      {
+        "type": "link",
+        "label": "Documentation",
+        "href": "#",
+        "line": 390
+      },
+      {
+        "type": "button",
+        "label": "Sync",
+        "line": 165
+      },
+      {
+        "type": "button",
+        "label": "Create Record",
+        "line": 168
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 172
+      },
+      {
+        "type": "button",
+        "label": "account_circle",
+        "line": 175
+      },
+      {
+        "type": "button",
+        "label": "Filter",
+        "line": 224
+      },
+      {
+        "type": "button",
+        "label": "sort",
+        "line": 227
+      },
+      {
+        "type": "button",
+        "label": "Edit",
+        "line": 256
+      },
+      {
+        "type": "button",
+        "label": "Edit",
+        "line": 270
+      },
+      {
+        "type": "button",
+        "label": "Edit",
+        "line": 286
+      },
+      {
+        "type": "button",
+        "label": "Retry",
+        "line": 287
+      },
+      {
+        "type": "button",
+        "label": "Edit",
+        "line": 301
+      },
+      {
+        "type": "button",
+        "label": "close",
+        "line": 312
+      },
+      {
+        "type": "button",
+        "label": "Message",
+        "line": 373
+      },
+      {
+        "type": "button",
+        "label": "Assign Task",
+        "line": 376
+      },
+      {
+        "type": "input",
+        "label": "Search Records...",
+        "inputType": "text",
+        "placeholder": "Search Records...",
+        "line": 157
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 114
+      },
+      {
+        "type": "link",
+        "label": "Status Board",
+        "href": "#",
+        "line": 120
+      },
+      {
+        "type": "link",
+        "label": "Assignments",
+        "href": "#",
+        "line": 126
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 132
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 140
+      },
+      {
+        "type": "link",
+        "label": "Support",
+        "href": "#",
+        "line": 144
+      },
+      {
+        "type": "link",
+        "label": "System Status",
+        "href": "#",
+        "line": 389
+      },
+      {
+        "type": "link",
+        "label": "Documentation",
+        "href": "#",
+        "line": 390
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "Sync",
+        "line": 165
+      },
+      {
+        "type": "button",
+        "label": "Create Record",
+        "line": 168
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 172
+      },
+      {
+        "type": "button",
+        "label": "account_circle",
+        "line": 175
+      },
+      {
+        "type": "button",
+        "label": "Filter",
+        "line": 224
+      },
+      {
+        "type": "button",
+        "label": "sort",
+        "line": 227
+      },
+      {
+        "type": "button",
+        "label": "Edit",
+        "line": 256
+      },
+      {
+        "type": "button",
+        "label": "Edit",
+        "line": 270
+      },
+      {
+        "type": "button",
+        "label": "Edit",
+        "line": 286
+      },
+      {
+        "type": "button",
+        "label": "Retry",
+        "line": 287
+      },
+      {
+        "type": "button",
+        "label": "Edit",
+        "line": 301
+      },
+      {
+        "type": "button",
+        "label": "close",
+        "line": 312
+      },
+      {
+        "type": "button",
+        "label": "Message",
+        "line": 373
+      },
+      {
+        "type": "button",
+        "label": "Assign Task",
+        "line": 376
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "Search Records...",
+        "inputType": "text",
+        "placeholder": "Search Records...",
+        "line": 157
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 23,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "57219ab8bdfa49e4860194ea60266cfd",
+    "screenTitle": "Status Board - ShiftLedger Lite",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 189
+      },
+      {
+        "type": "link",
+        "label": "Status Board",
+        "href": "#",
+        "line": 193
+      },
+      {
+        "type": "link",
+        "label": "Assignments",
+        "href": "#",
+        "line": 197
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 201
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 207
+      },
+      {
+        "type": "link",
+        "label": "Support",
+        "href": "#",
+        "line": 211
+      },
+      {
+        "type": "link",
+        "label": "System Status",
+        "href": "#",
+        "line": 398
+      },
+      {
+        "type": "link",
+        "label": "Documentation",
+        "href": "#",
+        "line": 399
+      },
+      {
+        "type": "button",
+        "label": "sync",
+        "line": 231
+      },
+      {
+        "type": "button",
+        "label": "Create Record",
+        "line": 235
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 240
+      },
+      {
+        "type": "button",
+        "label": "menu",
+        "line": 243
+      },
+      {
+        "type": "button",
+        "label": "filter_list",
+        "line": 257
+      },
+      {
+        "type": "button",
+        "label": "view_week",
+        "line": 260
+      },
+      {
+        "type": "button",
+        "label": "more_horiz",
+        "line": 275
+      },
+      {
+        "type": "button",
+        "label": "more_horiz",
+        "line": 305
+      },
+      {
+        "type": "button",
+        "label": "edit",
+        "line": 325
+      },
+      {
+        "type": "button",
+        "label": "more_horiz",
+        "line": 340
+      },
+      {
+        "type": "button",
+        "label": "RESOLVE",
+        "line": 358
+      },
+      {
+        "type": "button",
+        "label": "more_horiz",
+        "line": 373
+      },
+      {
+        "type": "button",
+        "label": "SIGN OFF",
+        "line": 383
+      },
+      {
+        "type": "input",
+        "label": "Search records...",
+        "inputType": "text",
+        "placeholder": "Search records...",
+        "line": 227
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 189
+      },
+      {
+        "type": "link",
+        "label": "Status Board",
+        "href": "#",
+        "line": 193
+      },
+      {
+        "type": "link",
+        "label": "Assignments",
+        "href": "#",
+        "line": 197
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 201
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 207
+      },
+      {
+        "type": "link",
+        "label": "Support",
+        "href": "#",
+        "line": 211
+      },
+      {
+        "type": "link",
+        "label": "System Status",
+        "href": "#",
+        "line": 398
+      },
+      {
+        "type": "link",
+        "label": "Documentation",
+        "href": "#",
+        "line": 399
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "sync",
+        "line": 231
+      },
+      {
+        "type": "button",
+        "label": "Create Record",
+        "line": 235
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 240
+      },
+      {
+        "type": "button",
+        "label": "menu",
+        "line": 243
+      },
+      {
+        "type": "button",
+        "label": "filter_list",
+        "line": 257
+      },
+      {
+        "type": "button",
+        "label": "view_week",
+        "line": 260
+      },
+      {
+        "type": "button",
+        "label": "more_horiz",
+        "line": 275
+      },
+      {
+        "type": "button",
+        "label": "more_horiz",
+        "line": 305
+      },
+      {
+        "type": "button",
+        "label": "edit",
+        "line": 325
+      },
+      {
+        "type": "button",
+        "label": "more_horiz",
+        "line": 340
+      },
+      {
+        "type": "button",
+        "label": "RESOLVE",
+        "line": 358
+      },
+      {
+        "type": "button",
+        "label": "more_horiz",
+        "line": 373
+      },
+      {
+        "type": "button",
+        "label": "SIGN OFF",
+        "line": 383
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "Search records...",
+        "inputType": "text",
+        "placeholder": "Search records...",
+        "line": 227
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 22,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "7902aeecda09476997a7ef1ebb837333",
+    "screenTitle": "Insights - ShiftLedger Lite",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 178
+      },
+      {
+        "type": "link",
+        "label": "Status Board",
+        "href": "#",
+        "line": 182
+      },
+      {
+        "type": "link",
+        "label": "Assignments",
+        "href": "#",
+        "line": 186
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 191
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 197
+      },
+      {
+        "type": "link",
+        "label": "Support",
+        "href": "#",
+        "line": 201
+      },
+      {
+        "type": "link",
+        "label": "System Status",
+        "href": "#",
+        "line": 402
+      },
+      {
+        "type": "link",
+        "label": "Documentation",
+        "href": "#",
+        "line": 403
+      },
+      {
+        "type": "button",
+        "label": "menu",
+        "line": 213
+      },
+      {
+        "type": "button",
+        "label": "Sync",
+        "line": 225
+      },
+      {
+        "type": "button",
+        "label": "Create Record",
+        "line": 228
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 232
+      },
+      {
+        "type": "button",
+        "label": "account_circle",
+        "line": 235
+      },
+      {
+        "type": "button",
+        "label": "Filter",
+        "line": 249
+      },
+      {
+        "type": "button",
+        "label": "Export",
+        "line": 253
+      },
+      {
+        "type": "button",
+        "label": "View Tasks",
+        "line": 307
+      },
+      {
+        "type": "button",
+        "label": "more_vert",
+        "line": 318
+      },
+      {
+        "type": "input",
+        "label": "Search...",
+        "inputType": "text",
+        "placeholder": "Search...",
+        "line": 218
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 178
+      },
+      {
+        "type": "link",
+        "label": "Status Board",
+        "href": "#",
+        "line": 182
+      },
+      {
+        "type": "link",
+        "label": "Assignments",
+        "href": "#",
+        "line": 186
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 191
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 197
+      },
+      {
+        "type": "link",
+        "label": "Support",
+        "href": "#",
+        "line": 201
+      },
+      {
+        "type": "link",
+        "label": "System Status",
+        "href": "#",
+        "line": 402
+      },
+      {
+        "type": "link",
+        "label": "Documentation",
+        "href": "#",
+        "line": 403
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "menu",
+        "line": 213
+      },
+      {
+        "type": "button",
+        "label": "Sync",
+        "line": 225
+      },
+      {
+        "type": "button",
+        "label": "Create Record",
+        "line": 228
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 232
+      },
+      {
+        "type": "button",
+        "label": "account_circle",
+        "line": 235
+      },
+      {
+        "type": "button",
+        "label": "Filter",
+        "line": 249
+      },
+      {
+        "type": "button",
+        "label": "Export",
+        "line": 253
+      },
+      {
+        "type": "button",
+        "label": "View Tasks",
+        "line": 307
+      },
+      {
+        "type": "button",
+        "label": "more_vert",
+        "line": 318
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "Search...",
+        "inputType": "text",
+        "placeholder": "Search...",
+        "line": 218
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 18,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "69ec0ddc999a4bf4a1019765b5cfa0ae",
+    "screenTitle": "Settings and Preferences - ShiftLedger Lite",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 116
+      },
+      {
+        "type": "link",
+        "label": "Status Board",
+        "href": "#",
+        "line": 122
+      },
+      {
+        "type": "link",
+        "label": "Assignments",
+        "href": "#",
+        "line": 128
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 134
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 142
+      },
+      {
+        "type": "link",
+        "label": "Support",
+        "href": "#",
+        "line": 148
+      },
+      {
+        "type": "link",
+        "label": "System Status",
+        "href": "#",
+        "line": 374
+      },
+      {
+        "type": "link",
+        "label": "Documentation",
+        "href": "#",
+        "line": 375
+      },
+      {
+        "type": "button",
+        "label": "sync",
+        "line": 165
+      },
+      {
+        "type": "button",
+        "label": "Create Record",
+        "line": 169
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 173
+      },
+      {
+        "type": "button",
+        "label": "account_circle",
+        "line": 176
+      },
+      {
+        "type": "button",
+        "label": "Edit",
+        "line": 262
+      },
+      {
+        "type": "button",
+        "label": "Edit",
+        "line": 272
+      },
+      {
+        "type": "button",
+        "label": "Reset to Defaults",
+        "line": 351
+      },
+      {
+        "type": "button",
+        "label": "Reset Controls",
+        "line": 361
+      },
+      {
+        "type": "button",
+        "label": "Save Changes",
+        "line": 364
+      },
+      {
+        "type": "input",
+        "label": "Search...",
+        "inputType": "text",
+        "placeholder": "Search...",
+        "line": 161
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 207
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 217
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 221
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 228
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 259
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 269
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 281
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 305
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 315
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 325
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 332
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 116
+      },
+      {
+        "type": "link",
+        "label": "Status Board",
+        "href": "#",
+        "line": 122
+      },
+      {
+        "type": "link",
+        "label": "Assignments",
+        "href": "#",
+        "line": 128
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 134
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 142
+      },
+      {
+        "type": "link",
+        "label": "Support",
+        "href": "#",
+        "line": 148
+      },
+      {
+        "type": "link",
+        "label": "System Status",
+        "href": "#",
+        "line": 374
+      },
+      {
+        "type": "link",
+        "label": "Documentation",
+        "href": "#",
+        "line": 375
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "sync",
+        "line": 165
+      },
+      {
+        "type": "button",
+        "label": "Create Record",
+        "line": 169
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 173
+      },
+      {
+        "type": "button",
+        "label": "account_circle",
+        "line": 176
+      },
+      {
+        "type": "button",
+        "label": "Edit",
+        "line": 262
+      },
+      {
+        "type": "button",
+        "label": "Edit",
+        "line": 272
+      },
+      {
+        "type": "button",
+        "label": "Reset to Defaults",
+        "line": 351
+      },
+      {
+        "type": "button",
+        "label": "Reset Controls",
+        "line": 361
+      },
+      {
+        "type": "button",
+        "label": "Save Changes",
+        "line": 364
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "Search...",
+        "inputType": "text",
+        "placeholder": "Search...",
+        "line": 161
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 207
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 217
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 221
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 228
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 259
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 269
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 281
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 305
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 315
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 325
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 332
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 29,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  }
+]
